@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.strandls.hibernateormdemo.dao;
+package com.strandls.hibernateormdemo.dao.impl;
 
 /**
  *
  * @author sethuraman
  */
-public class EmployeeDAO {
+public class EmployeeDAOImpl {
     
 }

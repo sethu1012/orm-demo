@@ -8,6 +8,7 @@ package com.strandls.hibernateormdemo.service.impl;
 import com.strandls.hibernateormdemo.dao.EmployeeDAO;
 import com.strandls.hibernateormdemo.model.Employee;
 import com.strandls.hibernateormdemo.service.EmployeeService;
+import java.util.List;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,15 +18,17 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
     
-    private final EmployeeDAO dao;
-    
-    public EmployeeServiceImpl(EmployeeDAO dao) {
-        this.dao = dao;
-    }
+//    private final EmployeeDAO dao;
 
     @Override
     public Employee addEmployee(Employee employee) {
-        return this.dao.save(employee);
+        return null;
+    }
+    
+    @Override
+    public List<Employee> getAllEmployees() {
+//        return this.dao.();
+        return null;
     }
     
 }

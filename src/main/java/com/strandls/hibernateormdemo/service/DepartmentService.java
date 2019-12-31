@@ -5,16 +5,14 @@
  */
 package com.strandls.hibernateormdemo.service;
 
-import com.strandls.hibernateormdemo.model.Employee;
+import com.strandls.hibernateormdemo.model.Department;
 import java.util.List;
+import java.util.Set;
 
 /**
  *
  * @author sethuraman
  */
-public interface EmployeeService {
-    
-    public Employee addEmployee(Employee employee);
-    public List<Employee> getAllEmployees();
-    
+public interface DepartmentService {
+    List<Department> getAllDepartments();
 }

@@ -9,9 +9,12 @@ import com.strandls.hibernateormdemo.dto.EmployeeDTO;
 import com.strandls.hibernateormdemo.model.Department;
 import com.strandls.hibernateormdemo.model.Employee;
 import com.strandls.hibernateormdemo.service.EmployeeService;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +28,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class EmployeeController {
     
+    @PersistenceContext
+    private EntityManager entityManager;
+    
     @Autowired
     private EmployeeService service;
     
@@ -35,6 +41,11 @@ public class EmployeeController {
         employee.setDepartment(new Department(employeeDTO.getDepartment()));
         employee = this.service.addEmployee(employee);
         return new ResponseEntity(employee, HttpStatus.CREATED);
+    }
+    
+    @GetMapping("/all")
+    public ResponseEntity getAllEmployees() {
+        return new ResponseEntity("", HttpStatus.OK);
     }
     
 }

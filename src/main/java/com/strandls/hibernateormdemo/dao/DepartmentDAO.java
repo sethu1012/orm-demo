@@ -5,10 +5,15 @@
  */
 package com.strandls.hibernateormdemo.dao;
 
+import com.strandls.hibernateormdemo.model.Department;
+import java.util.List;
+import org.springframework.stereotype.Repository;
+
 /**
  *
  * @author sethuraman
  */
-public class EmployeeDAO {
-    
+public interface DepartmentDAO {
+    List<Department> getAllDepartments();
+    Department getDepartment(Long id);
 }
